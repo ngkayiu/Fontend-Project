@@ -1,0 +1,11 @@
+{
+  "pid": 4,
+  "artist": "Mozart",
+  "album": "Piano Concertos Nr. 20 & 21",
+  "genre": "Classical",
+  "description": "The Piano Concerto No. 20 in D minor, K. 466, was composed by Wolfgang Amadeus Mozart in 1785. The first performance took place at the Mehlgrube [de] Concert Hall in Vienna on 11 February 1785, with the composer as the soloist.",
+  "price": 210.00,
+  "stock": 17,
+  "image_url": "https://i.discogs.com/f2uqwTwSrtmZDhZ6xD_cenztDgUCwXbzbs_rePdi-jM/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1ODkz/OTgtMTM2ODkxOTE2/NC04Nzg0LmpwZWc.jpeg",
+  "track_list": "A1 Allegro\nA2 Romance\nA3 Rondo (Allegro Assai)\nB1 (Allegro Maestoso)\nB2 Andante\nB3 Allegro Vivace Assai"
+}

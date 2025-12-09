@@ -1,0 +1,50 @@
+[
+  {
+    "pid": 2,
+    "artist": "John Williams",
+    "album": "Jurassic Park",
+    "price": 1000.00,
+    "hasStock": false,
+    "image_url": "https://i.discogs.com/74mJZTGra4V_3IlvPINcoF0pACilNqydg0QURuwoCWU/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3ODI0/NTQtMTQ4OTkyNTU0/My04NDg3LmpwZWc.jpeg"
+  },
+  {
+    "pid": 3,
+    "artist": "John Williams",
+    "album": "Star Wars",
+    "price": 250.00,
+    "hasStock": true,
+    "image_url": "https://i.discogs.com/rGdoiE2ADPuCkjT90uTHwduZpoDV7rviTPKL35UTOvk/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYwMDQ2/Ni0xNTcxNTA1Mjcz/LTM2NzUuanBlZw.jpeg"
+  },
+  {
+    "pid": 4,
+    "artist": "Mozart",
+    "album": "Piano Concertos Nr. 20 & 21",
+    "price": 210.00,
+    "hasStock": true,
+    "image_url": "https://i.discogs.com/f2uqwTwSrtmZDhZ6xD_cenztDgUCwXbzbs_rePdi-jM/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1ODkz/OTgtMTM2ODkxOTE2/NC04Nzg0LmpwZWc.jpeg"
+  },
+  {
+    "pid": 5,
+    "artist": "宇多田光",
+    "album": "First Love",
+    "price": 290.00,
+    "hasStock": true,
+    "image_url": "https://i.discogs.com/sgCmQWUr4STRiFegXiQBYf9MQaAMgVrm1nWbMymhIdQ/rs:fit/g:sm/q:90/h:566/w:553/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4ODYx/NjctMTI1MDEzOTAw/Mi5qcGVn.jpeg"
+  },
+  {
+    "pid": 6,
+    "artist": "周杰倫",
+    "album": "Jay",
+    "price": 3640.00,
+    "hasStock": true,
+    "image_url": "https://i.discogs.com/lnt2vtyuqcGFy7xexU9BAg7Gh9S_Ynq3gMShT1UjDJ0/rs:fit/g:sm/q:90/h:588/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2NDU3/Mjk1LTE2MDc4NjYx/NjctOTc3My5qcGVn.jpeg"
+  },
+  {
+    "pid": 7,
+    "artist": "Adele",
+    "album": "21",
+    "price": 200.00,
+    "hasStock": true,
+    "image_url": "https://i.discogs.com/pbgKc7liXRhTdGM1zNhToDidUDYjK7_CQsxNaXxQTtE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2NjQ1/ODktMTQ1MjI2OTk5/NS03Mjk4LnBuZw.jpeg"
+  }
+]
