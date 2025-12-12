@@ -37,9 +37,9 @@ export default function ProductListingPage(){
             <TopPhoto/>
             {
                 getAllProductDtoList && !isLoading
-                ?
+                    ?
                     <ProductCardContainer getAllProductDtoList={getAllProductDtoList}/>
-                :   <LoadingContainer/>
+                    :   <LoadingContainer/>
             }
 
         </>

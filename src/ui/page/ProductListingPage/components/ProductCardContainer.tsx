@@ -14,7 +14,7 @@ export default function ProductCardContainer({getAllProductDtoList}:Props){
                    getAllProductDtoList.map((getAllProductDto)=>(
                        <Col
                            className="d-flex justify-content-center my-3"
-                           sm={5} md={4} lg={3}>
+                           sm={6} md={5} lg={4} xl={3}>
                            <ProductCard getAllProductDto={getAllProductDto}/>
                        </Col>
                        )

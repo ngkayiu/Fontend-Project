@@ -20,6 +20,20 @@
     transition: 0.2s;
 }
 
+
+#accountIcon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+
+#cartIcon:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+
+
 #card:hover{
     transform: scale(1.04);
     transition: 0.2s;
@@ -27,7 +41,6 @@
         filter: brightness(0.3);
         transition: 0.2s;
     }
-
     cursor: pointer;
 }
 

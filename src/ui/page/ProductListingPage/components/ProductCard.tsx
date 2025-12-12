@@ -10,7 +10,7 @@ export default function ProductCard({getAllProductDto}:Props){
     return(
         <Link to={"/product/$productId"} params={{productId: getAllProductDto.pid.toString()}}
               className="text-decoration-none">
-        <Card id="card" style={{ width: '14rem' }}>
+        <Card id="card" style={{ width: '14rem'}}>
             <div className="justify-content-center text-center">
             <Card.Img id="cardImg" variant="top" src={getAllProductDto.image_url} style={{height:200}}/>
             <Card.Body>
