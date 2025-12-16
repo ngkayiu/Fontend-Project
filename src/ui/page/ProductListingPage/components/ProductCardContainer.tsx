@@ -11,7 +11,11 @@ export default function ProductCardContainer({getAllProductDtoList}:Props){
         <Container className="px-5">
            <Row className="my-5">
                {
-                   getAllProductDtoList.map((getAllProductDto)=>(
+                   getAllProductDtoList
+                   //     .filter((getAllProductDto)=>(
+                   //      getAllProductDto.includes()
+                   // ))
+                       .map((getAllProductDto)=>(
                        <Col
                            className="d-flex justify-content-center my-3"
                            sm={6} md={5} lg={4} xl={3}>

@@ -1,6 +1,6 @@
 import {Button, Container, Dropdown, Form, InputGroup, Navbar, Spinner} from "react-bootstrap";
 import {Link} from "@tanstack/react-router";
-import {type FormEvent, useContext} from "react";
+import {useContext} from "react";
 import {LoginUserContext} from "../../context/LoginUserContext.tsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBasketShopping, faUser} from "@fortawesome/free-solid-svg-icons";
@@ -10,9 +10,9 @@ import {signOut} from "../../authService/FirebaseAuthService.ts";
 
 export default function TopNavBar(){
 
-    const handleSearch = async (event:FormEvent<HTMLFormElement>) =>{
-        event.preventDefault();
-    }
+    // const handleSearch = async (event:FormEvent<HTMLFormElement>) =>{
+    //     event.preventDefault();
+    // }
     // const result = await handleSearch();
 
     const loginUser = useContext(LoginUserContext);
@@ -36,7 +36,9 @@ export default function TopNavBar(){
                     </Dropdown.Menu>
                 </Dropdown>
 
+                <Link to={"/shoppingcart"}>
                 <FontAwesomeIcon icon={faBasketShopping} id="cartIcon" size="xl" style={{color: "#FFD43B"}} />
+                </Link>
             </div>)
         } else if (loginUser === null){
            return (<Link to="/login" className="text-decoration-none">
@@ -65,7 +67,7 @@ export default function TopNavBar(){
             </Navbar.Brand>
 
             <Form className="d-flex"
-                  onSubmit={handleSearch}
+                  // onSubmit={handleSearch}
             >
                 <InputGroup size="sm">
                         <Form.Control

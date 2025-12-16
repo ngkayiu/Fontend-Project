@@ -10,13 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ShoppingcartIndexRouteImport } from './routes/shoppingcart/index'
 import { Route as LoginIndexRouteImport } from './routes/login/index'
 import { Route as ErrorIndexRouteImport } from './routes/error/index'
 import { Route as ProductProductIdRouteImport } from './routes/product/$productId'
+import { Route as GenreGenreNameRouteImport } from './routes/genre/$genreName'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShoppingcartIndexRoute = ShoppingcartIndexRouteImport.update({
+  id: '/shoppingcart/',
+  path: '/shoppingcart/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginIndexRoute = LoginIndexRouteImport.update({
@@ -34,39 +41,71 @@ const ProductProductIdRoute = ProductProductIdRouteImport.update({
   path: '/product/$productId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GenreGenreNameRoute = GenreGenreNameRouteImport.update({
+  id: '/genre/$genreName',
+  path: '/genre/$genreName',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/genre/$genreName': typeof GenreGenreNameRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/error': typeof ErrorIndexRoute
   '/login': typeof LoginIndexRoute
+  '/shoppingcart': typeof ShoppingcartIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/genre/$genreName': typeof GenreGenreNameRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/error': typeof ErrorIndexRoute
   '/login': typeof LoginIndexRoute
+  '/shoppingcart': typeof ShoppingcartIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/genre/$genreName': typeof GenreGenreNameRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/error/': typeof ErrorIndexRoute
   '/login/': typeof LoginIndexRoute
+  '/shoppingcart/': typeof ShoppingcartIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/product/$productId' | '/error' | '/login'
+  fullPaths:
+    | '/'
+    | '/genre/$genreName'
+    | '/product/$productId'
+    | '/error'
+    | '/login'
+    | '/shoppingcart'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/product/$productId' | '/error' | '/login'
-  id: '__root__' | '/' | '/product/$productId' | '/error/' | '/login/'
+  to:
+    | '/'
+    | '/genre/$genreName'
+    | '/product/$productId'
+    | '/error'
+    | '/login'
+    | '/shoppingcart'
+  id:
+    | '__root__'
+    | '/'
+    | '/genre/$genreName'
+    | '/product/$productId'
+    | '/error/'
+    | '/login/'
+    | '/shoppingcart/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GenreGenreNameRoute: typeof GenreGenreNameRoute
   ProductProductIdRoute: typeof ProductProductIdRoute
   ErrorIndexRoute: typeof ErrorIndexRoute
   LoginIndexRoute: typeof LoginIndexRoute
+  ShoppingcartIndexRoute: typeof ShoppingcartIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -76,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shoppingcart/': {
+      id: '/shoppingcart/'
+      path: '/shoppingcart'
+      fullPath: '/shoppingcart'
+      preLoaderRoute: typeof ShoppingcartIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login/': {
@@ -99,14 +145,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductProductIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/genre/$genreName': {
+      id: '/genre/$genreName'
+      path: '/genre/$genreName'
+      fullPath: '/genre/$genreName'
+      preLoaderRoute: typeof GenreGenreNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GenreGenreNameRoute: GenreGenreNameRoute,
   ProductProductIdRoute: ProductProductIdRoute,
   ErrorIndexRoute: ErrorIndexRoute,
   LoginIndexRoute: LoginIndexRoute,
+  ShoppingcartIndexRoute: ShoppingcartIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
