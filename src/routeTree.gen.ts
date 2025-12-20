@@ -10,15 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ThankyouIndexRouteImport } from './routes/thankyou/index'
 import { Route as ShoppingcartIndexRouteImport } from './routes/shoppingcart/index'
 import { Route as LoginIndexRouteImport } from './routes/login/index'
 import { Route as ErrorIndexRouteImport } from './routes/error/index'
 import { Route as ProductProductIdRouteImport } from './routes/product/$productId'
 import { Route as GenreGenreNameRouteImport } from './routes/genre/$genreName'
+import { Route as CheckoutTidRouteImport } from './routes/checkout/$tid'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThankyouIndexRoute = ThankyouIndexRouteImport.update({
+  id: '/thankyou/',
+  path: '/thankyou/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShoppingcartIndexRoute = ShoppingcartIndexRouteImport.update({
@@ -46,66 +53,85 @@ const GenreGenreNameRoute = GenreGenreNameRouteImport.update({
   path: '/genre/$genreName',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckoutTidRoute = CheckoutTidRouteImport.update({
+  id: '/checkout/$tid',
+  path: '/checkout/$tid',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/checkout/$tid': typeof CheckoutTidRoute
   '/genre/$genreName': typeof GenreGenreNameRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/error': typeof ErrorIndexRoute
   '/login': typeof LoginIndexRoute
   '/shoppingcart': typeof ShoppingcartIndexRoute
+  '/thankyou': typeof ThankyouIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/checkout/$tid': typeof CheckoutTidRoute
   '/genre/$genreName': typeof GenreGenreNameRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/error': typeof ErrorIndexRoute
   '/login': typeof LoginIndexRoute
   '/shoppingcart': typeof ShoppingcartIndexRoute
+  '/thankyou': typeof ThankyouIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/checkout/$tid': typeof CheckoutTidRoute
   '/genre/$genreName': typeof GenreGenreNameRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/error/': typeof ErrorIndexRoute
   '/login/': typeof LoginIndexRoute
   '/shoppingcart/': typeof ShoppingcartIndexRoute
+  '/thankyou/': typeof ThankyouIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/checkout/$tid'
     | '/genre/$genreName'
     | '/product/$productId'
     | '/error'
     | '/login'
     | '/shoppingcart'
+    | '/thankyou'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/checkout/$tid'
     | '/genre/$genreName'
     | '/product/$productId'
     | '/error'
     | '/login'
     | '/shoppingcart'
+    | '/thankyou'
   id:
     | '__root__'
     | '/'
+    | '/checkout/$tid'
     | '/genre/$genreName'
     | '/product/$productId'
     | '/error/'
     | '/login/'
     | '/shoppingcart/'
+    | '/thankyou/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CheckoutTidRoute: typeof CheckoutTidRoute
   GenreGenreNameRoute: typeof GenreGenreNameRoute
   ProductProductIdRoute: typeof ProductProductIdRoute
   ErrorIndexRoute: typeof ErrorIndexRoute
   LoginIndexRoute: typeof LoginIndexRoute
   ShoppingcartIndexRoute: typeof ShoppingcartIndexRoute
+  ThankyouIndexRoute: typeof ThankyouIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -115,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thankyou/': {
+      id: '/thankyou/'
+      path: '/thankyou'
+      fullPath: '/thankyou'
+      preLoaderRoute: typeof ThankyouIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shoppingcart/': {
@@ -152,16 +185,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GenreGenreNameRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/checkout/$tid': {
+      id: '/checkout/$tid'
+      path: '/checkout/$tid'
+      fullPath: '/checkout/$tid'
+      preLoaderRoute: typeof CheckoutTidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CheckoutTidRoute: CheckoutTidRoute,
   GenreGenreNameRoute: GenreGenreNameRoute,
   ProductProductIdRoute: ProductProductIdRoute,
   ErrorIndexRoute: ErrorIndexRoute,
   LoginIndexRoute: LoginIndexRoute,
   ShoppingcartIndexRoute: ShoppingcartIndexRoute,
+  ThankyouIndexRoute: ThankyouIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
